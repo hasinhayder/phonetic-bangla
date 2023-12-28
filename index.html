@@ -1,0 +1,52 @@
+
+<!-- saved from url=(0029)https://scripts.ofhas.in/bim/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">	
+		<title>Phonetic and Unijoy Bangla Input Scripts by Ekushey Team</title>
+		<script type="text/javascript" src="./assets/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="./assets/driver.phonetic.js"></script>
+		<script type="text/javascript" src="./assets/driver.probhat.js"></script>
+		<script type="text/javascript" src="./assets/engine.js"></script>
+		<style>
+		.bangla{
+			font-size:18px;
+		}
+		</style>
+	</head>
+	<body data-new-gr-c-s-check-loaded="14.1147.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1147.0">
+		Input System:  
+                <input checked="" type="radio" name="bn" onclick="enablePhonetic();"> Phonetic |
+		<input type="radio" name="bn" onclick="enableProbhat();"> Probhat
+		<h2>Type Bangla in the following input boxes</h2>
+		<textarea cols="120" rows="20" class="bangla" autocomplete="off" spellcheck="false"></textarea><br><br>
+		Or type here<br>
+		<input type="text" style="width:650px;height:30px;" class="bangla"><br>
+		<br><br>
+		You can switch to English and Bangla anytime by pressing Ctrl+y in windows and linux (Command+y in mac) <br>
+		Checkout the source code of <a href="./assets/engine.js">BanglaInputManager plugin</a> which acts as the central engine<br>
+		Checkout the source code of <a href="./assets/driver.phonetic.js">Phonetic Input Driver</a> which parses the input phonetically<br>
+		
+		<br><br>Brought to you by <a href="http://ekushey.org/">Ekushey Team</a>
+		
+	
+
+	
+	</body>
+	<script>
+		$(document).ready(function(){
+				$(".bangla").bnKb({
+					'switchkey': 'y',
+					'driver': phonetic
+				});
+			});
+			
+			function enablePhonetic()
+			{
+				$(".unijoy").bnKb({'switchkey': 'y','driver': phonetic});
+			}
+			
+			function enableProbhat()
+			{
+				$(".unijoy").bnKb({'switchkey': 'y','driver': probhat});
+			}
+	</script>
+	</html>
